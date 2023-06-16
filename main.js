@@ -72,7 +72,8 @@ function evaluateOperation(display) {
     
     if (operationFactory) {
         const result = operationFunction(operand1, operand2);
-        if (result || result == 0) {
+        console.log(result)
+        if (result || result === 0) {
             const rounded = result.toFixed(3);
             const integer = result.toFixed(0);
             if (result > integer) {
