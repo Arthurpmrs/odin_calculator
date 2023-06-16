@@ -1,0 +1,97 @@
+:root {
+    --general-background-color-1: #fff5d7;
+    --component-background-color-1: #fff;
+    --primary-color-1: #e6a6ff;
+    --primary-color-1-lighter: #eab4ff;
+    --primary-color-2: #edbfff;
+    --primary-color-2-lighter: #f0cbff;
+    --border: 4px solid black;
+    --shadow: 8px 7px 0px 0px rgba(0,0,0,1);
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 1.125rem;
+    background-color: var(--general-background-color-1);
+    font-family: 'Public Sans', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.calculator {
+    max-width: 600px;
+    border: var(--border);
+    border-radius: 1rem;
+    background-color: var(--component-background-color-1);
+    box-shadow: var(--shadow);
+    margin-bottom: 5rem;
+}
+
+.calculator > * {
+    margin: 1.5em;
+}
+
+.display {
+    border: var(--border);
+    border-radius: 0.625rem;
+    padding: 1em;
+    font-weight: 900;
+}
+
+.numpad {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+    gap: 0.5em;
+}
+
+.numpad #btn-sum {
+    grid-row: 4 / 6;
+    grid-column: 4 / 4;
+}
+
+button {
+    font-size: 1.375rem;
+    text-align: center;
+    width: 3.6em;
+    padding: 0.5em 0;
+    background-color: var(--primary-color-2);
+    border: var(--border);
+    border-radius: 0.375em;
+    font-weight: 900;
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    outline: 1px solid black;
+    cursor: pointer;
+    transform: translate(0);
+    transition: transform 100ms ease, box-shadow 100ms ease;
+}
+
+button:not(.number) {
+    background-color: var(--primary-color-1);
+
+}
+
+button:hover {
+    background-color: var(--primary-color-2-lighter);
+}
+
+button:not(.number):hover {
+    background-color: var(--primary-color-1-lighter);
+}
+
+button:active {
+    transform: translate(5px, 5px);
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
