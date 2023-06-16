@@ -21,11 +21,17 @@ function addAnsToDisplay(display, ans) {
 }
 
 function addOperationToDisplay(display, event, elements) {
-    if (itemsOnDisplay(display.textContent) == 2) {
+    if (event.target.textContent === "-" && display.textContent === "0") {
+        display.textContent = "-";
+    } else if (event.target.textContent === "-" && 
+               display.textContent[display.textContent.length - 1] === " ") {
+        display.textContent += "-";
+    } else if (itemsOnDisplay(display.textContent) == 2) {
         alert("Type a number value.");
     } else if (itemsOnDisplay(display.textContent) == 3) {
         const result = evaluateOperation(display);
         elements.setAnsValue(result);
+        display.textContent += ` ${event.target.textContent} `;
     } else {
         display.textContent += ` ${event.target.textContent} `;
     }
@@ -133,6 +139,7 @@ function evaluateOperation(display) {
 
             this.clear.addEventListener("click", e => {
                 this.display.textContent = "0";
+                this.ansValue = 0;
             })
         }
     };
