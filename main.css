@@ -31,7 +31,6 @@ main {
 }
 
 .calculator {
-    max-width: 600px;
     border: var(--border);
     border-radius: 1rem;
     background-color: var(--component-background-color-1);
@@ -47,6 +46,8 @@ main {
     border: var(--border);
     border-radius: 0.625rem;
     padding: 1em;
+    max-width: 340px;
+    overflow: auto;
     font-weight: 900;
 }
 
@@ -80,7 +81,6 @@ button {
 
 button:not(.number) {
     background-color: var(--primary-color-1);
-
 }
 
 button:hover {
