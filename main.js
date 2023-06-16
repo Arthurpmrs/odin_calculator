@@ -40,7 +40,10 @@ function addOperationToDisplay(display, event, elements) {
 function backOneCharacter(display) {
     let content = display.textContent;
     let lastChar = content[display.textContent.length - 1];
-    if (lastChar === " ") {
+    
+    if (content.length == 1) {
+        display.textContent = "0";
+    } else if (lastChar === " ") {
         display.textContent = display.textContent.substring(0, display.textContent.length - 3);
     } else {
         display.textContent = display.textContent.substring(0, display.textContent.length - 1);
