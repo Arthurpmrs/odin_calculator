@@ -35,7 +35,7 @@ main {
     border-radius: 1rem;
     background-color: var(--component-background-color-1);
     box-shadow: var(--shadow);
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .calculator > * {
@@ -49,6 +49,8 @@ main {
     max-width: 340px;
     overflow: auto;
     font-weight: 900;
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    outline: 1px solid black;
 }
 
 .numpad {
@@ -94,4 +96,30 @@ button:not(.number):hover {
 button:active {
     transform: translate(5px, 5px);
     box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    font-weight: 600;
+}
+
+.footer svg {
+    padding: 0px 8px;
+    width: 1.4em;
+}
+
+.footer a, 
+.footer a:visited, 
+.footer a:active {
+    text-decoration: none;
+    color: black;
+    transform: scale(1);
+    transition: transform 100ms ease;
+}
+
+.footer a:hover {
+    transform: scale(1.1);
 }
